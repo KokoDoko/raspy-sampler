@@ -9,7 +9,7 @@ pianohat.set_led(13, False)
 pianohat.set_led(14, True)
 pianohat.set_led(15, True)
 
-# in 1 seconde de 8 toetsen bij langs is 120 bpm
+# 120 beats per minute is 0.125 sec per position
 bpm = 0.125
 bank = 1
 position = 0
@@ -22,7 +22,7 @@ keymap = [0,0,1,1,2,3,3,4,4,5,5,6,7]
 sounds = []
 recordings = [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]]
 
-# begin met beat
+# begin wit a basic beat
 # recordings = [[1,0],[0,-1],[0,-1],[0,-1],[1,0],[0,-1],[0,-1],[0,-1]]
 rec = True
 # todo recording moet arrays en bank bevatten, meer sounds simultaan
@@ -41,7 +41,7 @@ def handleNote(key, pressed):
         else :
             sounds[bank][index].play(loops=0)
 
-# dit is alleen de bpm om te zien wanneer de loop opnieuw begint
+# pass over all 8 positions, light the led, play recorded sound
 def nextStep():
     global position
     recarray = recordings[position]
@@ -62,7 +62,7 @@ def nextStep():
     # next
     threading.Timer(bpm, nextStep).start()
 
-
+# change bank and erase recording
 def changeSettings(ch, evt):
     global bank
     global recordings
@@ -89,7 +89,7 @@ def changeSettings(ch, evt):
 
 
 
-# create sound objects, append the array to main array = two dimensional array
+# create sound objects for all .wav files
 sounds.append(settings.createSoundObjects(settings.files1))
 sounds.append(settings.createSoundObjects(settings.files2))
 
