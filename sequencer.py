@@ -25,7 +25,6 @@ recordings = [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]]
 # begin wit a basic beat
 # recordings = [[1,0],[0,-1],[0,-1],[0,-1],[1,0],[0,-1],[0,-1],[0,-1]]
 rec = True
-# todo recording moet arrays en bank bevatten, meer sounds simultaan
 
 def handleNote(key, pressed):
     global position
