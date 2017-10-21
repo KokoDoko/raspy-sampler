@@ -1,5 +1,7 @@
 # raspy-sampler
 
+[![Youtube](https://img.youtube.com/vi/bWudBkCdCZA/0.jpg)](https://www.youtube.com/watch?v=bWudBkCdCZA "Youtube")
+
 ## Sampler / Sequencer
 
 A very basic sampler / sequencer for the [Raspbperry Pi Piano HAT](https://shop.pimoroni.com/products/piano-hat). This python program reads key input from the Pimoroni Piano Hat on your raspberry pi.
